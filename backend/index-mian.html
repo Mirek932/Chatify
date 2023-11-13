@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatify</title>
+  <link rel="icon" type="image/png" href="icons/Icon.ico">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+
+<body>
+  <div id="message_box" class="message_box">
+    <ul class="messages" id="messages"></ul>
+  </div>
+  <p class="Emojie-text" style="color: red; font-weight: bolder; ">Emojies</p>
+  <div id="Emojies" class="Emojis">
+  </div>
+  <form id="form" action="">
+    <input emojies=0 maxlength="80" placeholder="Type here..." id="input" autocomplete="off" /><button>Send</button>
+  </form>
+
+  <div id="rooms_inview" class="side_check">
+    <div>
+      <p class="Username" id="username" style="font-weight: bolder; color: red;">New User</p>
+      <form id="UsernameChange">
+        <input class="UsernameInput" autocomplete="off" minlength="3" maxlength="12" type="text" name="Username" id="username_new">
+        <button class="usernameButton">Change Name</button>
+      </form>
+    </div>
+    <p class="in_sided">ROOMS</p>
+    <ul id="rooms"></ul>
+    <div class="in_sided">
+      <p class="in_sided">ChatRoom</p>
+      <form class="in_sided" id="room_join">
+        <input class="Inputs" id="room_input_join" type="text" autocomplete="off" placeholder="RoomID" /> <button style="background-color: rgba(255, 255, 255, 0); border-radius: 5px; border: 0px; width: 40px;"> <img src="icons/Rooms/join.svg" alt="Join"> </img> </button>
+      </form>
+      <form class="in_sided" id="room_create">
+        <input maxlength="16" class="Inputs" autocomplete="off" type="text" id="room_name_create" placeholder="Name">
+        <input class="Inputs" id="room_input_create" type="text" autocomplete="off" placeholder="RoomID" /> <button style="background-color: rgba(255, 255, 255, 0); border-radius: 5px; border: 0px;"> <img src="icons/ChatRoom/Brodcast.svg" alt="Brodcast"></button>
+      </form>
+    </div>
+
+    <p class="room_class">Rooms</p>
+    <div class="Rooms_List">
+      <div id="appendRooms">
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+
+<script src="client.js"></script>
+<script src="scripts/socketEvent.js"></script>
+<script src="scripts/emojis.js"></script>
+<script src="scripts/image.js"></script>
+</body>
+
+</html>

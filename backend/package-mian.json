@@ -1,0 +1,11 @@
+{
+  "name": "chatify",
+  "version": "0.0.1",
+  "description": "Chatify for everyone who wants it :D",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Mirek Reuter; Emilian Ziegler",
+  "license": "ISC"
+}
