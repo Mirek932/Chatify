@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de-en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatify</title>
+  <link rel="icon" type="image/png" href="../icons/Icon.ico">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/handy.css" />
+</head>
+
+
+<body onload="">
+  <div id="message_box" class="message_box">
+    <ul class="messages" style="width: 89%; margin-left: 0%; padding-left: 0%;" id="messages">
+      <li class="message" style="background-color: rgb(6, 0, 54); box-shadow: 3px 3px 30px black; border: 10px rgb(17, 0, 255) double; margin-left: 0%;">
+        <center>
+          <h1>LOADING...</h1>
+          <p style="text-wrap: wrap; white-space: pre-line;">If it dosnt load click <href onclick="info();">here</href>
+          </p>
+        </center>
+      </li>
+    </ul>
+  </div>
+
+  <form action="post">
+    <button class="mps-1 mps-text"  style="background-color: rgb(255, 0, 0);">Post</button>
+  </form>
+  <form action="chat">
+    <button class="mps-text mps-2">Chat</button>
+  </form>
+  <form action="profile">
+    <button class="mps-text mps-3">Profiles</button>
+  </form>
+
+  <div id="Emojies" style="margin-top: 5rem; height: 87%;" class="Emojis">
+  </div>
+
+  <form id="form">
+    <input emojies=0 maxlength="40" placeholder="Title" class="input" id="title" autocomplete="off" />
+    <input emojies=0 maxlength="800" placeholder="Description" id="input" autocomplete="off" /> <p id="letter cooldown" style="color: red; font-weight: bolder; font-size: medium;">---</p><button>Post to public</button>
+  </form>
+
+  <script src="../socket.io/socket.io.js"></script>
+  
+  <script src="../scripts/emojis.js"></script>
+  <script src="../scripts/letter.js"></script>
+  <script src="../scripts/tick.js"></script>
+  <script src="../scripts/reloads.js"></script>
+  <script src="../scripts/socketEvent.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de-en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatify</title>
+  <link rel="icon" type="image/png" href="icons/Icon.ico">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/handy.css" />
+  <link rel="manifest" href="scripts/manifest.json">
+</head>
+
+
+<body onload="elapsedTimeStop()">
+  <div id="message_box" class="message_box">
+    <ul class="messages" id="messages"></ul>
+  </div>
+
+  <form action="post">
+    <button class="mps-1 mps-text">Post</button>
+  </form>
+  <form action="chat">
+    <button class="mps-text mps-2" style="background-color: rgb(255, 0, 0);">Chat</button>
+  </form>
+  <form action="profile">
+    <button class="mps-text mps-3">Profiles</button>
+  </form>
+
+
+  <p class="mps-info" style="margin-top: 14.5%; color: rgb(151, 0, 0);">LOAD TIME</p>
+
+  <p class="mps-info" style="margin-top: 15.8%;" id="loadTimeTwo">Document Time: -</p>
+  <p class="mps-info" id="loadTime" style="margin-top: 16.8%;">Server Time: -</p>
+  <p class="mps-info" style="margin-top: 18%;" id="loadTimeThree">Start Time: -</p>
+
+
+  <p class="mps-info" style="margin-top: 20%; color: rgb(151, 0, 0);">PING/MPS</p>
+
+  <p class="load-text" style="margin-top: 21.5%;" id="mps">MPS: -</p>
+  <p class="Emojie-text" style="color: rgb(151, 0, 0); font-weight: bolder; ">Emojis</p>
+  <div id="Emojies" class="Emojis">
+  </div>
+  <p class="response_info" id="response">-------------------</p>
+  <form id="form" action="">
+    <input emojies=0 maxlength="500" placeholder="Type here..." id="input" autocomplete="off" /><button>Send</button>
+  </form>
+
+  <p class="collapsible" col="Rooms" style="color: red; font-weight: bolder;"><img src="icons/css/open_menu.svg" style="background-color: red;" alt="Expand"><source src="icons/css/open_menu.svg"></p>
+  <div name="Rooms" id="rooms_inview" class="side_check"> 
+    <div>
+      <p class="Username" id="username" style="font-weight: bolder; color: red;">New User</p>
+      <form id="UsernameChange">
+        <input required class="UsernameInput" autocomplete="off" placeholder="username" minlength="3" maxlength="12" type="text"
+        name="Username" id="username_new">
+        <input required class="UsernameInput" style="margin-top: 5px; border: gray 3px dotted;" placeholder="bio" autocomplete="off" minlength="3" maxlength="620" type="text" 
+        name="Description" id="description">
+        <input required class="UsernameInput" style="margin-top: 5px; border: yellow 3px dotted;" placeholder="emial" autocomplete="off" minlength="3" maxlength="620" type="text" 
+        name="Description" id="email">
+        <button class="usernameButton">Change Name</button>
+      </form>
+    </div>
+    <p class="in_sided collapsible" col="ChatRoom1" anti_col="ChatRoom2">Create <img src="icons/css/open_menu.svg" height="20rem" class="Rooms_Button" style="box-shadow: 4px 3px 7px 1px black;" alt="EXPAND"></p>
+    <ul id="rooms"></ul>
+    <div class="in_sided" style="display: none;" name="ChatRoom1">
+      <p class="in_sided rooms_info">ChatRoom</p>
+      <form class="in_sided rooms_info" id="room_join">
+        <input maxlength="200" class="Inputs" id="room_input_join" type="text" autocomplete="off"
+          placeholder="RoomID" /> <button
+          style="background-color: rgba(255, 255, 255, 0); border-radius: 5px; border: 0px; width: 40px;"> <img
+            src="icons/Rooms/join.svg" alt="Join" class="rooms_out"> </img> </button>
+      </form>
+      <form class="in_sided rooms_info" id="room_create">
+        <input maxlength="16" class="Inputs" autocomplete="off" type="text" id="room_name_create" placeholder="Name">
+        <input maxlength="200" class="Inputs" id="room_input_create" type="text" autocomplete="off"
+          placeholder="RoomID" /> <button
+          style="background-color: rgba(255, 255, 255, 0); border-radius: 5px; border: 0px;"> <img class="rooms_out"
+            src="icons/ChatRoom/Brodcast.svg" alt="Brodcast"></button>
+      </form>
+    </div>
+    <p class="room_class collapsible" col="ChatRoom2" anti_col="ChatRoom1">Rooms <img src="icons/css/open_menu.svg" height="20rem" class="Rooms_Button" style="box-shadow: 4px 3px 7px 1px black;" alt="EXPAND"></p>
+    <div class="Rooms_List" name="ChatRoom2" style="display: block;">
+      <div id="appendRooms">
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script src="scripts/collapsibles.js"></script>
+  <script src="client.js"></script>
+  <script src="scripts/socketEvent.js"></script>
+  <script src="scripts/emojis.js"></script>
+  <script src="scripts/reloads.js"></script>
+  <script src="scripts/tick.js"></script>
+  <script src="scripts/image.js"></script>
+  <script src="scripts/typingIndicator.js"></script>
+</body>
+
+</html>

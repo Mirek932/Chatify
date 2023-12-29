@@ -1,0 +1,20 @@
+{
+  "name": "chatify",
+  "version": "0.0.1",
+  "description": "Chatify for everyone who wants it :D",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js --ignore ./storage/",
+    "debug": "nodemon debug.js --ignore ./storage/",
+    "run_backup": "nodemon app-backup.js --ignore ./storage/",
+    "create_backup": "@type app.js > app-backup.js",
+    "clear_messages": "@type demo.json > ./storage/message.json"
+  },
+  "author": "Mirek Reuter; Emilian Ziegler",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
