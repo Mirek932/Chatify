@@ -1,4 +1,0 @@
-POST http://chatifytherealone.web
-Content-Type: application/json
-
-{ "username": "adam" }
