@@ -4,7 +4,7 @@
   "description": "Chatify for everyone who wants it :D",
   "main": "app.js",
   "scripts": {
-    "start": "nodeom app.js --ignore message.json"
+    "start": "node app.js --ignore message.json"
   },
   "author": "Mirek Reuter; Emilian Ziegler",
   "license": "ISC",
