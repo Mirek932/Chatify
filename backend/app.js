@@ -1,7 +1,8 @@
 const express = require("./node_modules/express");
 const app = express();
-const os = require("./node_modules/os");
-const appip = os.networkInterfaces()  ;
+//const os = require("./node_modules/os");
+//const appip = os.networkInterfaces()  ;
+const appid = "-";
 const http = require("http");
 const server = http.createServer(app);
 const { Server, RemoteSocket } = require("./node_modules/socket.io");
@@ -15,7 +16,6 @@ soup.words('de');
 var subdomainOptions = {
   base: 'chatifyof.com'
 };
-
 const port = 3000;
 const appadress = 'http://['+appip+']:'+port;
 const blacklist = require("./storage/blacklist.json")
