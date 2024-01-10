@@ -1,15 +1,15 @@
-const express = require("express");
+const express = require("./node_modules/express");
 const app = express();
-const os = require('os');
+const os = require("./node_modules/os");
 const appip = os.networkInterfaces()  ;
-const http = require('http');
+const http = require("http");
 const server = http.createServer(app);
-const { Server, RemoteSocket } = require("socket.io");
+const { Server, RemoteSocket } = require("./node_modules/socket.io");
 const io = new Server(server);
-var path = require("path");
-const { writeFile } = require('fs/promises');
+var path = require("./node_modules/path");
+const { writeFile } = require("./node_modules/promises"); //'fs/promises'
 var fs = require('fs');
-var colors = require("colors/safe");
+var colors = require("./node_modules/colors/safe");
 const soup = require('./scripts/washyourmouthoutwithsoap-develop/index')
 soup.words('de');
 var subdomainOptions = {
